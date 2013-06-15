@@ -1,10 +1,16 @@
-<h1>Listing event_rsvps</h1>
+<h1>RSVPs</h1>
 
-<table>
+<h2>This is your event attendence indication</h2>
+
+Total Responses:
+<%=@event_rsvps.count%>
+
+
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Probability</th>
+    <th>Response</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,6 +28,3 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Event rsvp', new_event_rsvp_path %>

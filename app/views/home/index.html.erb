@@ -1,0 +1,18 @@
+<h1>RSVP</h1>
+
+<h2>Events:</h2>
+
+<% @events.each do |event| %>
+    <h3><%= event.name %></h3>
+    <p><%= event.event_date %></p>
+    <p><%= event.event_location %></p>
+    <p>
+      <%= link_to 'RSVP here', new_event_rsvp_path %></p>
+<% end %>
+
+
+
+
+
+
+

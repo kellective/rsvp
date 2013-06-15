@@ -12,18 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Your name' %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, 'Your email' %><br />
     <%= f.text_field :email %>
   </div>
+    <div class="field">
+    <%= f.label :event_id %><br />
+    <%= f.collection_select :event_id, Event.all, :id, :name %>
+  </div>
   <div class="field">
-    <%= f.label :probability %><br />
-    <%= f.text_area :probability %>
+
+    <%= f.label :probability_yes, "Yes" %>
+    <%= f.radio_button :probability, "yes" %>
+
+    <%= f.label :probability_maybe, "Maybe" %>
+    <%= f.radio_button :probability, "maybe" %>
+
+    <%= f.label :probability_no, "No"%>
+    <%= f.radio_button :probability, "no" %>
+
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Respond" %>
   </div>
 <% end %>
