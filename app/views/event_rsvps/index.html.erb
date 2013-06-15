@@ -1,0 +1,27 @@
+<h1>Listing event_rsvps</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Probability</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @event_rsvps.each do |event_rsvp| %>
+  <tr>
+    <td><%= event_rsvp.name %></td>
+    <td><%= event_rsvp.email %></td>
+    <td><%= event_rsvp.probability %></td>
+    <td><%= link_to 'Show', event_rsvp %></td>
+    <td><%= link_to 'Edit', edit_event_rsvp_path(event_rsvp) %></td>
+    <td><%= link_to 'Destroy', event_rsvp, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event rsvp', new_event_rsvp_path %>
