@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if user_signed_in? %>
+    <div id="admin-header">
+      <div class="container">
+        <%= link_to 'Create New Event', new_event_path, :class=>'button' %>
+        <%= link_to 'View Events', events_path, :class=>'button' %>
+        <%= link_to 'Sign out', destroy_user_session_path, :class=>'button' %>
+      </div>
+    </div>
+  <% else %>
+    <%= link_to 'View Events', events_path, :class=>'button' %>
+  <% end %>
   <div class="container">
     <div class="sixteen columns">
       <% if notice %>
@@ -16,6 +26,7 @@
       <% if alert %>
         <p class="alert alert-error"><%= alert %></p>
       <% end %>
+
       <%= yield %>
   </div>
   </div>
